@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Star, Users, Award, Clock } from 'lucide-react';
+import { Star, Users, Award, Clock, Gem, ShieldCheck, Lightbulb } from 'lucide-react';
 import { AdminSettings } from '../types';
 
 interface AboutPageProps {
@@ -8,6 +8,24 @@ interface AboutPageProps {
 }
 
 const AboutPage: React.FC<AboutPageProps> = ({ settings }) => {
+  const values = [
+    {
+      icon: Gem,
+      title: 'Qualidade',
+      description: 'Utilizamos apenas produtos premium e técnicas especializadas para garantir os melhores resultados.'
+    },
+    {
+      icon: ShieldCheck,
+      title: 'Confiança',
+      description: 'Transparência em todos os processos e compromisso com prazos e orçamentos acordados.'
+    },
+    {
+      icon: Lightbulb,
+      title: 'Inovação',
+      description: 'Sempre atualizados com as mais modernas técnicas e equipamentos do mercado automotivo.'
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-black py-20">
       <div className="container mx-auto px-4">
@@ -97,20 +115,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ settings }) => {
           <h2 className="text-white text-3xl font-bold text-center mb-12">Nossos Valores</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: 'Qualidade',
-                description: 'Utilizamos apenas produtos premium e técnicas especializadas para garantir os melhores resultados.'
-              },
-              {
-                title: 'Confiança',
-                description: 'Transparência em todos os processos e compromisso com prazos e orçamentos acordados.'
-              },
-              {
-                title: 'Inovação',
-                description: 'Sempre atualizados com as mais modernas técnicas e equipamentos do mercado automotivo.'
-              }
-            ].map((value, index) => (
+            {values.map((value, index) => (
               <motion.div
                 key={index}
                 className="text-center"
@@ -118,8 +123,8 @@ const AboutPage: React.FC<AboutPageProps> = ({ settings }) => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1 + (index * 0.2) }}
               >
-                <div className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <div className="w-8 h-8 bg-white rounded-full" />
+                <div className="w-16 h-16 bg-red-500/20 text-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <value.icon className="w-8 h-8" />
                 </div>
                 <h3 className="text-white text-xl font-bold mb-3">{value.title}</h3>
                 <p className="text-gray-400 leading-relaxed">{value.description}</p>
