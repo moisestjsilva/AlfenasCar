@@ -23,6 +23,13 @@ const ContactPage: React.FC<ContactPageProps> = ({ settings, onWhatsApp }) => {
     setFormData({ name: '', email: '', phone: '', message: '' });
   };
 
+  const operatingHours = Object.entries(settings.schedule.days)
+    .filter(([, schedule]) => schedule.enabled)
+    .map(([day, schedule]) => ({
+      day: day.charAt(0).toUpperCase() + day.slice(1),
+      time: `${schedule.startTime} - ${schedule.endTime}`
+    }));
+
   return (
     <div className="min-h-screen bg-black py-20">
       <div className="container mx-auto px-4">
@@ -35,15 +42,7 @@ const ContactPage: React.FC<ContactPageProps> = ({ settings, onWhatsApp }) => {
           <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">
             Entre em Contato
           </h1>
-          <div className="flex items-center justify-center space-x-1 mb-6">
-            {[...Array(5)].map((_, i) => (
-              <div
-                key={i}
-                className="w-6 h-4 bg-red-500 transform skew-x-12"
-                style={{ marginLeft: i > 0 ? '-6px' : '0' }}
-              />
-            ))}
-          </div>
+          <div className="w-24 h-1 bg-red-500 mx-auto mb-6"></div>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Estamos prontos para atender você. Entre em contato conosco através dos canais abaixo
           </p>
@@ -61,36 +60,36 @@ const ContactPage: React.FC<ContactPageProps> = ({ settings, onWhatsApp }) => {
               <h2 className="text-white text-xl font-bold mb-6">Informações de Contato</h2>
               
               <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <MapPin className="text-red-500" size={20} />
+                <div className="flex items-start space-x-3">
+                  <MapPin className="text-red-500 mt-1" size={20} />
                   <div>
                     <p className="text-white font-medium">Endereço</p>
                     <p className="text-gray-400">{settings.contactAddress}</p>
                   </div>
                 </div>
                 
-                <div className="flex items-center space-x-3">
-                  <Phone className="text-red-500" size={20} />
+                <div className="flex items-start space-x-3">
+                  <Phone className="text-red-500 mt-1" size={20} />
                   <div>
                     <p className="text-white font-medium">Telefone</p>
                     <p className="text-gray-400">{settings.contactPhone}</p>
                   </div>
                 </div>
                 
-                <div className="flex items-center space-x-3">
-                  <Mail className="text-red-500" size={20} />
+                <div className="flex items-start space-x-3">
+                  <Mail className="text-red-500 mt-1" size={20} />
                   <div>
                     <p className="text-white font-medium">E-mail</p>
                     <p className="text-gray-400">{settings.contactEmail}</p>
                   </div>
                 </div>
                 
-                <div className="flex items-center space-x-3">
-                  <Clock className="text-red-500" size={20} />
+                <div className="flex items-start space-x-3">
+                  <Clock className="text-red-500 mt-1" size={20} />
                   <div>
                     <p className="text-white font-medium">Horários</p>
-                    {settings.operatingHours.map(hour => (
-                      <p key={hour.id} className="text-gray-400">{hour.day}: {hour.time}</p>
+                    {operatingHours.map(hour => (
+                      <p key={hour.day} className="text-gray-400">{hour.day}: {hour.time}</p>
                     ))}
                   </div>
                 </div>

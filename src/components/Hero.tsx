@@ -8,21 +8,6 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ onNavigateToServices, onWhatsApp }) => {
-  const RedArrows = () => (
-    <div className="flex items-center justify-center space-x-1 mb-8">
-      {[...Array(5)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="w-8 h-6 bg-red-500 transform skew-x-12"
-          style={{ marginLeft: i > 0 ? '-10px' : '0' }}
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: i * 0.1, duration: 0.5 }}
-        />
-      ))}
-    </div>
-  );
-
   return (
     <section className="relative min-h-screen bg-black overflow-hidden">
       {/* Background Pattern */}
@@ -45,10 +30,8 @@ const Hero: React.FC<HeroProps> = ({ onNavigateToServices, onWhatsApp }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <RedArrows />
-            
             <motion.h1 
-              className="text-white text-5xl md:text-7xl font-bold tracking-wider mb-4"
+              className="text-white text-5xl md:text-7xl font-bold tracking-wider mb-4 pt-16"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}

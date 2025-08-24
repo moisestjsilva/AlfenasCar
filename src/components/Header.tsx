@@ -20,34 +20,22 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate, user, onLogin,
     { id: 'contact', label: 'Contato' }
   ];
 
-  const RedArrows = () => (
-    <div className="flex items-center space-x-1">
-      {[...Array(5)].map((_, i) => (
-        <div
-          key={i}
-          className="w-6 h-4 bg-red-500 transform skew-x-12"
-          style={{ marginLeft: i > 0 ? '-8px' : '0' }}
-        />
-      ))}
-    </div>
-  );
-
   return (
     <header className="bg-black border-b border-gray-800 relative z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <motion.div 
-            className="flex items-center space-x-4 cursor-pointer"
+            className="flex items-center cursor-pointer"
             onClick={() => onNavigate('home')}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <div className="text-center">
-              <h1 className="text-white text-2xl font-bold tracking-wider">ALFENAS CAR</h1>
-              <p className="text-white text-xs tracking-widest">ESTÉTICA AUTOMOTIVA</p>
-            </div>
-            <RedArrows />
+            <img 
+              src="https://www.dropbox.com/scl/fi/tqmzx0smafj2ssd7ee08m/1000677808-removebg-preview.png?rlkey=pywnxysxyf8fvq6hb395he0zh&st=82jio2c3&dl=1"
+              alt="Logo AlfenasCar"
+              className="h-16"
+            />
           </motion.div>
 
           {/* Desktop Navigation */}

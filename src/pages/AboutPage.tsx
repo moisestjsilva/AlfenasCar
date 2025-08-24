@@ -38,15 +38,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ settings }) => {
           <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">
             Sobre a AlfenasCar
           </h1>
-          <div className="flex items-center justify-center space-x-1 mb-6">
-            {[...Array(5)].map((_, i) => (
-              <div
-                key={i}
-                className="w-6 h-4 bg-red-500 transform skew-x-12"
-                style={{ marginLeft: i > 0 ? '-6px' : '0' }}
-              />
-            ))}
-          </div>
+          <div className="w-24 h-1 bg-red-500 mx-auto mb-6"></div>
           <p className="text-gray-400 text-lg max-w-3xl mx-auto">
             Especializada em estética automotiva, oferecemos serviços de qualidade superior com mais de 5 anos de experiência no mercado
           </p>

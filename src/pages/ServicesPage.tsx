@@ -34,15 +34,7 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ services, onServiceClick })
           <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">
             Nossos Serviços
           </h1>
-          <div className="flex items-center justify-center space-x-1 mb-6">
-            {[...Array(5)].map((_, i) => (
-              <div
-                key={i}
-                className="w-6 h-4 bg-red-500 transform skew-x-12"
-                style={{ marginLeft: i > 0 ? '-6px' : '0' }}
-              />
-            ))}
-          </div>
+          <div className="w-24 h-1 bg-red-500 mx-auto mb-6"></div>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Descubra toda nossa gama de serviços especializados em estética automotiva
           </p>

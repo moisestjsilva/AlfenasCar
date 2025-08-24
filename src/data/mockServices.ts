@@ -8,7 +8,7 @@ export const mockServices: Service[] = [
     shortDescription: 'Lavagem externa e interna completa',
     description: 'Serviço completo de lavagem externa e interna do veículo, incluindo aspiração, limpeza dos tapetes, painel e vidros.',
     price: 35.00,
-    duration: '45 min',
+    duration: '60 min',
     image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=300&fit=crop',
     category: 'Lavagem',
     featured: true
@@ -30,7 +30,7 @@ export const mockServices: Service[] = [
     shortDescription: 'Detalhamento interno e externo',
     description: 'Serviço completo de detalhamento automotivo incluindo polimento, enceramento, limpeza profunda dos bancos e tratamento de couro.',
     price: 250.00,
-    duration: '4 horas',
+    duration: '240 min',
     image: 'https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?w=500&h=300&fit=crop',
     category: 'Detalhamento',
     featured: true
@@ -61,7 +61,7 @@ export const mockServices: Service[] = [
     shortDescription: 'Remoção de riscos e marcas',
     description: 'Polimento técnico para remoção de micro riscos, marcas de água e oxidação leve da pintura.',
     price: 150.00,
-    duration: '2 horas',
+    duration: '120 min',
     image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=500&h=300&fit=crop',
     category: 'Polimento'
   }
